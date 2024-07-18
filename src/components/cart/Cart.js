@@ -21,15 +21,16 @@ const Cart = () => {
   const delivery = 99;
   const totalPrice = price - discount + delivery;
 
-  console.log('cartItems', cartItems);
-  console.log('discount', discount);
-  console.log('totalPrice', totalPrice);
+  // console.log('cartItems', cartItems);
+  // console.log('discount', discount);
+  // console.log('totalPrice', totalPrice);
 
   const amount = 500;
   const currency = 'INR';
   const receiptId = 'qwsaq1';
 
   async function displayRazorpay() {
+    setButtonClicked(true);
     const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
     debugger
     if (!res) {
