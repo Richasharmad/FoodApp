@@ -3,7 +3,10 @@ const Razorpay = require('razorpay');
 const shortid = require('shortid');
 const cors = require("cors");
 const app = express();
+require('dotenv').config();
 app.use(cors());
+
+const PORT = process.env.PORT;
 
 const razorpay = new Razorpay({ key_id: 'rzp_test_WQ5utinHn9gQDY', key_secret: 'f3oIS3cvmmudlDhBKUYeyWwV' })
 
@@ -32,6 +35,6 @@ app.post('/razorpay', async (req,res)=>{
 
 })
 
-app.listen(1377, () => {
-    console.log('Listening on 1377')
+app.listen(PORT, () => {
+    console.log('Listening on port',PORT)
 })

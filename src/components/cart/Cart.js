@@ -5,6 +5,10 @@ import CartItemCard from './CartItemCard';
 import { clearCart } from '../../utils/cartSlice';
 import EmptyCart from './EmptyCart';
 
+const BASE_URL = 'https://foodapp-oxov.onrender.com'
+
+//const BASE_URL = 'http://localhost:1377'
+
 
 const Cart = () => {
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -38,7 +42,7 @@ const Cart = () => {
       return
     }
 
-    const response = await fetch('http://localhost:1377/razorpay', {
+    const response = await fetch(`${BASE_URL}/razorpay`, {
       method: 'POST',
       body: JSON.stringify({
         amount,
