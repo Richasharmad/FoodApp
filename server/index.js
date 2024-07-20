@@ -6,7 +6,7 @@ const app = express();
 require('dotenv').config();
 app.use(cors());
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 1377;
 
 const razorpay = new Razorpay({ key_id: 'rzp_test_WQ5utinHn9gQDY', key_secret: 'f3oIS3cvmmudlDhBKUYeyWwV' })
 
